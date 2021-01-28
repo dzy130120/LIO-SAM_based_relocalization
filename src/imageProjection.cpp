@@ -211,6 +211,7 @@ public:
         pcl::fromROSMsg(currentCloudMsg, *laserCloudIn);
 
         // check dense flag
+        laserCloudIn->is_dense = true;
         if (laserCloudIn->is_dense == false)
         {
             ROS_ERROR("Point cloud is not in dense format, please remove NaN points first!");
